@@ -29,7 +29,7 @@ def clients():
               help='The client\'s position')
 @click.pass_context
 def create(ctx, name, company, email, position):
-    """Create a new client"""
+    """Creates a new client"""
     client = Client(name, company, email, position)
     client_service = ClientService(ctx.obj['clients_table'])
 
@@ -39,7 +39,7 @@ def create(ctx, name, company, email, position):
 @clients.command()
 @click.pass_context
 def list(ctx):
-    """List all cients"""
+    """Lists all cients"""
     client_service = ClientService(ctx.obj['clients_table'])
 
     clients_list = client_service.list_clients()
